@@ -1,0 +1,40 @@
+<html>
+    <head>
+
+    </head>
+    <body id="bodi">
+        <div style="display: flex;"> 
+            <p>số cột</p>
+            <input type="number" id = "cot">
+        </div>
+        <div style="display: flex;"> 
+            <p>số dòng</p>
+            <input type="number" id = "dong">
+        </div>
+        <button onclick="taobang()">tao bang</button>
+        <script>
+            function taobang() {
+                let cot = document.getElementById("cot").value
+                console.log(cot)
+                let dong = document.getElementById("dong").value
+                console.log(dong)
+                let bang = document.createElement("table")
+                bang.border = 2
+                let giatri = 0
+                for (i=0;i<dong;i++) {
+                    let dongthui = document.createElement("tr")
+                    for (j=0;j<cot;j++) {
+                        let cotthuj = document.createElement("td")
+                        cotthuj.innerText = giatri
+                        giatri++;
+                        dongthui.appendChild(cotthuj)
+                    }
+                    bang.appendChild(dongthui)
+                }
+
+            let bodi = document.getElementById("bodi")
+            bodi.append(bang)
+            }
+        </script>
+    </body>
+</html>
