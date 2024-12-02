@@ -52,8 +52,8 @@
             </div>
             <hr>
             <div>
-                <button id = "loginbutton">Login</button>
-                <button id = "closebutton  ">Close</button>
+                <button id = "loginbutton" onclick="check()">Login</button>
+                <button id = "closebutton">Close</button>
             </div>
         </div>
         <script>
@@ -106,16 +106,34 @@
                     document.getElementById("user").innerText = "Tên người dùng"
                     document.getElementById("pass").innerText = "Mật khẩu"
                     document.getElementById("Login").innerText = "Khung đăng nhập"
-                    document.getElementById("selectlangauge").innerText = "Chọn ngôn ngữ"
+                    document.getElementById("selectlanguage").innerText = "Chọn ngôn ngữ"
+                    document.getElementById("loginbutton").innerText = "Đăng nhập"
+                    document.getElementById("closebutton").innerText = "Đóng"
                 }
                 else {
                     document.getElementById("user").innerText = "Username:"
                     document.getElementById("pass").innerText = "Password:"
                     document.getElementById("Login").innerText = "Login form"
-                    document.getElementById("selectlangauge").innerText = "Language"
+                    document.getElementById("selectlanguage").innerText = "Language"
+                    document.getElementById("loginbutton").innerText = "Login"
+                    document.getElementById("closebutton").innerText = "Close"
                     
                 }
             }
+            function check() {
+                let user = document.getElementById("Username")
+                let pass = document.getElementById("password")
+                let usercount = user.value.length
+                let passcount = pass.value.length
+                if (0==usercount|| usercount>20) {
+                    alert("Tên đăng nhập: Không được để trống và có độ dài tối đa 20 kí tự")
+
+                }
+                if (0 == passcount || passcount<16) {
+
+                }
+            }
+
 
         </script>
     </body>
