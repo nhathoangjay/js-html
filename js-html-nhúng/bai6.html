@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <style>
+            .container {
+                margin: 50px auto;
+                width: 300px;
+                padding-bottom: 20px;
+
+
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                border: 2px solid;
+                border-color: blue;
+            }
+            #Login{
+                background-color: blue;
+                text-align: left;
+                color: white;
+                padding: 10px;
+            }
+            #Username {
+                margin-top: 20px;
+            }
+            #password {
+                margin-top: 20px
+
+            }
+            hr {
+                color: blue;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class = "container">
+            <div id = "Login">Login form</div>
+            <div>
+                <a id = "user">Username:</a>
+                <input type="text" id = "Username" onfocus="focus1()" onblur="outfocus1()" onmouseover="hover1()" onmouseout="out1()">
+            </div>
+            <div> 
+                <a id = "pass">Password:</a>
+                <input type="password" id = "password" onfocus="focus2()" onblur="outfocus2()" onmouseover="hover2()" onmouseout="out2()"> 
+            </div>
+            <div style="margin-top: 20px;">
+                <a id = "selectlanguage">Language</a>
+                <select id = "Language"  onclick="Language()">
+                    <option value="1">English</option>
+                    <option value="2">Vietnamese</option>
+                </select>
+            </div>
+            <hr>
+            <div>
+                <button id = "loginbutton">Login</button>
+                <button id = "closebutton  ">Close</button>
+            </div>
+        </div>
+        <script>
+            function hover1(){
+                let name = document.getElementById("Username")
+                name.style.borderColor = "red"
+                
+            }
+            function out1() {
+                let name = document.getElementById("Username")
+                name.style.borderColor =  "black"
+            }
+            function hover2(){
+                let pass = document.getElementById("password")
+                pass.style.borderColor = "red"
+                
+            }
+            function out2() {
+                let pass = document.getElementById("password")
+                pass.style.borderColor =  "black"
+            }
+            function focus1() {
+                let name = document.getElementById("Username")
+                name.style.background = "pink"
+                name.style.color = "blue"
+                
+            }
+            function focus2() {
+                let pass = document.getElementById("password")
+                pass.style.background = "pink"
+                pass.style.color = "blue"
+                
+            }
+            function outfocus1() {
+                let name = document.getElementById("Username")
+                name.style.background = "white"
+                name.style.color = "black"
+                
+            }
+            function outfocus2() {
+                let pass = document.getElementById("password")
+                pass.style.background = "white"
+                pass.style.color = "black"
+                
+            }
+            function Language() {
+                let Language = document.getElementById("Language").value
+                console.log(Language)
+                if (Language == 2) {
+                    document.getElementById("user").innerText = "Tên người dùng"
+                    document.getElementById("pass").innerText = "Mật khẩu"
+                    document.getElementById("Login").innerText = "Khung đăng nhập"
+                    document.getElementById("selectlangauge").innerText = "Chọn ngôn ngữ"
+                }
+                else {
+                    document.getElementById("user").innerText = "Username:"
+                    document.getElementById("pass").innerText = "Password:"
+                    document.getElementById("Login").innerText = "Login form"
+                    document.getElementById("selectlangauge").innerText = "Language"
+                    
+                }
+            }
+
+        </script>
+    </body>
+</html>
