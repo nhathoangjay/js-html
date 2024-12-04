@@ -110,7 +110,7 @@
   <script>
     let number = 1
     function addProduct() {
-        let body = document.getElementById("tablebody")
+        let body = document.getElementById("productTable")
         let dongmoi = document.createElement("tr")
         let stt= document.createElement("td")
         let name = document.createElement("td")
@@ -118,7 +118,9 @@
         let disc = document.createElement("td")
         let hanhdong = document.createElement("td")
         let xoa = document.createElement("button")
+        xoa.id = "xoabutton"
         let sua = document.createElement("button")
+        sua.id = "suabutton"
         xoa.innerText ="xoa"
         sua.innerText = "sua"
         stt.innerText = number
@@ -131,17 +133,23 @@
         dongmoi.appendChild(disc)
         dongmoi.appendChild(hanhdong)
         hanhdong.appendChild(xoa)
-        hanhdong.appendChild(sua)
-        
-        
-
-
-
+        // hanhdong.appendChild(sua)
+        hanhdong.insertBefore(sua,xoa)
         body.appendChild(dongmoi)
         number++
-        
-
+        sua.addEventListener("click",suathongtin)
+        xoa.addEventListener("click",xoathongtin);
     }
+    function xoathongtin() {
+
+        
+    }
+    function suathongtin() {
+        let 
+    }
+    
+
+
   </script>
 
 </body>
